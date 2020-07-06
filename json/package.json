@@ -1,0 +1,51 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "format": "npm run format:prettier",
+    "format:prettier": "node_modules/.bin/prettier --config .prettierrc \"src/**/*.{ts,css,less,js}\" --write",
+    "lint": "npm run lint:js",
+    "lint:js": "./node_modules/.bin/eslint --fix \"src/**/*.js\" \"src/**/*.jsx\"",
+    "lint:staged": "./node_modules/.bin/eslint --fix",
+    "precommit": "pretty-quick --staged && lint-staged"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run lint:staged",
+      "git add"
+    ]
+  }
+}

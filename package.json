@@ -1,0 +1,37 @@
+{
+  "name": "proj__react-movie-search",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Movie search app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "npm run format:prettier",
+    "format:prettier": "node_modules/.bin/prettier --config .prettierrc \"src/**/*.{ts,css,scss,js,json}\" --write",
+    "lint": "npm run lint:js",
+    "lint:js": "./node_modules/.bin/eslint --fix \"src/**/*.js\" \"src/**/*.jsx\"",
+    "lint:staged": "./node_modules/.bin/eslint --fix",
+    "precommit": "pretty-quick --staged && lint-staged"
+  },
+  "author": "nick dyar",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.5",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-prettier": "^1.1.2"
+  }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+  :root {
+
+    /* typography */
+    --font-mono: 'IBM Plex Mono';
+    --font400: 400;
+    --font500: 500;
+    --font600: 600;
+    --font700: 700;
+    --font800: 800;
+    --font900: 900;
+
+    /* color */
+    --body-color: rgba(0, 0, 0, .8);
+    --primary-color: #00a672;
+    --primary-color-dark: #00835c;
+    --bg: #fff;
+    --bg-secondary: #f7f9f8;
+    --bg-transparent: hsla(0, 0%, 100%, .9);
+    --bg-teritary: #f7f9f8;
+    --dark-bg: #0d2538;
+    --code-bg: #0e2233;
+    --select-color: rgba(212, 53, 159, .2);
+    --inline-code-text: #b32585;
+    --inline-code-bg: rgba(212, 53, 159, .03);
+    --border-color: #e2ecec;
+    --border-color-darker: #cfe6e6;
+    --mark-color: #fff8ec;
+    --success-bg: rgba(91, 177, 150, .25);
+    --code-color: #fdf9f3;
+
+    /* layout */
+    --space: 25px;
+    --space-x2: 50px;
+    --border-radius: 5px;
+    --header-height: 58px;
+
+    /* shadow */
+    --glow: 2px 2px 15px 0 var(--border-color-darker);
+  }
+
+  .button {
+    display: inline-flex;
+    z-index: 1;
+    align-items: center;
+    padding: .34rem 1.2rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    background-color: transparent;
+    position: relative;
+    border: 0;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 5px;
+    color: var(--primary-color-dark);
+    transition: transform .2s, background .3s, box-shadow .3s, color .3s;
+  }
+
+  .button>span {
+    z-index: 2;
+  }
+
+  .button>svg+span {
+    margin-left: .25rem;
+  }
+
+  .button:hover {
+    box-shadow: var(--glow);
+    /* box-shadow: 2px 2px 15px 0 (#cfe6e6); */
+    transform: translateY(-1px);
+  }
+
+  .button:after {
+    content: ' ';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    border: 1px solid;
+    border-radius: 5px;
+    transition: opacity .3s, box-shadow .3s;
+    opacity: .6;
+    box-shadow: inset -1px -2px 0 0 rgba(0, 0, 0, .05);
+  }
+
+  .button:active:after {
+    box-shadow: none;
+  }
+
+  .button:hover:after {
+    opacity: 1;
+  }
+
+  .button.primary {
+    color: #fff;
+    background-color: var(--primary-color-dark);
+  }
+
+  .button.primary:after {
+    border-color: rgba(0, 0, 0, .1);
+  }
+
+  .button.primary:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: 100%;
+    right: 100%;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    transform-origin: center;
+    transform: translate(50%, 50%) scale(0);
+    transition: transform .2s ease-in-out;
+  }
+
+  .button.primary:focus:before,
+  .button.primary:hover:before {
+    transform: translate(50%, 50%) scale(20);
+  }
+
+  .button--small {
+    font-size: .85rem;
+    padding: .35rem .7rem;
+  }
+
+  .button--xsmall {
+    font-size: .7rem;
+    padding: .3rem .7rem;
+  }
+
+  .button--icon {
+    padding-left: .6rem;
+    padding-right: .6rem;
+  }
+
+  .button--blank {
+    background-color: transparent;
+    border-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: none;
+  }
+
+  .button--blank:not(:hover) {
+    color: currentColor;
+    opacity: .6;
+  }
+
+  .button--blank:after {
+    display: none;
+  }
+
+  .button--large {
+    font-size: 1.2rem;
+    padding: .5rem 1.5rem;
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Text Animation -->
+  <h2 class="IntroductionSectionWithCTA__MainText-v3egic-5 fWncqe">Your <br><span
+      class="AnimatedText__StyledTypingEffect-sc-1om8jqv-0 cqxHtE lfm__typing_effect"><span
+        class="lfm__typing_effect_text">desktop app</span><span
+        class="cursor lfm__typing_effect_cursor"
+        style="transition: opacity .5s ease 0s; opacity: 0;">|</span></span><br>experts.</h2>
+
+  <!-- Button -->
+  <p class="intro__links">
+    <a href="/docs/" class="button primary button--large"><span>Get started</span></a>
+  </p>
+
+</body>
+
+</html>
